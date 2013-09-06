@@ -5,7 +5,7 @@
 		$output = $output . "<li>";
 		$output = $output . '<p>' . $product["name"] . '</p>';
 		$output = $output . '<a href="shirt.php?id=' . $product_id . '">';
-		$output = $output . '<img src="' . $product["img"] . 
+		$output = $output . '<img src="' . BASE_URL . $product["img"] . 
 			'" alt="' . $product["name"] . '">';
 		$output = $output . "<p>View Details</p>";
 		$output = $output . "</a>";
