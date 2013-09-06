@@ -1,0 +1,1 @@
+<?php echo '<i style="color: #555; font-family: sans-serif;">' . "Today is " . date('l, F d, Y') . "</i>"; ?>
