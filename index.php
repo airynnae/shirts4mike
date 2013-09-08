@@ -2,7 +2,11 @@
 $pageTitle = "Welcome to Shirts 4 Mike!";
 $section = "homepage";
 require_once("includes/config.php");
-include(ROOT_PATH . "includes/header.php"); ?>
+include(ROOT_PATH . "includes/header.php");
+
+include(ROOT_PATH . "includes/products.php");
+$recent = get_products_recent(); 
+?>
 
 		<div class="section banner">
 
@@ -25,17 +29,14 @@ include(ROOT_PATH . "includes/header.php"); ?>
 
 				<h2>Mike&rsquo;s Latest Shirts</h2>
 
-				<?php include(ROOT_PATH . "includes/products.php"); ?>
+				<?php 
+					
+				?>
 				<ul class="products">
 				  <?php 
-				  // $start_display = 
-				  $current_product = 0;
 				  $list_view_html = "";
-				  foreach ($products as $product_id => $product) { 
-				  		$current_product = $current_product + 1;
-				  		if ($current_product > count($products) - 4) {
-				  			$list_view_html = get_list_view_html($product_id, $product) . $list_view_html;
-				  		}
+				  foreach ($recent as $product) { 
+				  		$list_view_html = get_list_view_html($product) . $list_view_html;
 				  	}
 				  echo $list_view_html; 
 				  ?>
